@@ -1,9 +1,8 @@
-{ pkgs, ... }: {
-
-nixpkgs = {
+{pkgs, ...}: {
+  nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = _: true;
     };
   };
 
@@ -24,11 +23,11 @@ nixpkgs = {
   };
 
   environment = {
-    shells = with pkgs; [ zsh ];
+    shells = with pkgs; [zsh];
     loginShell = pkgs.zsh;
-    systemPackages = with pkgs; [ git curl coreutils jq wget ];
-    systemPath = [ "/opt/homebrew/bin" ];
-    pathsToLink = [ "/Applications" ];
+    systemPackages = with pkgs; [git curl coreutils jq wget];
+    systemPath = ["/opt/homebrew/bin"];
+    pathsToLink = ["/Applications"];
   };
 
   services = {
@@ -37,7 +36,7 @@ nixpkgs = {
 
   nix = {
     package = pkgs.nix;
-    gc = { 
+    gc = {
       automatic = true;
       interval.Day = 7;
       options = "--delete-older-than 7d";

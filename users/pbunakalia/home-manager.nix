@@ -1,22 +1,18 @@
-{ inputs, ... }:
-{ pkgs, ... }:
-
-let 
+{inputs, ...}: {pkgs, ...}: let
   isDarwin = pkgs.stdenv.isDarwin;
-
 in {
-  imports = (import ./config);
+  imports = import ./config;
   manual.manpages.enable = false;
   home = {
     stateVersion = "23.11";
     packages = with pkgs; [
-# osx specific
+      # osx specific
       colima
       karabiner-elements
       skhd
       yabai
       sketchybar
-# general
+      # general
       awscli2
       alacritty
       bottom
@@ -72,8 +68,8 @@ in {
       enableCompletion = true;
       enableAutosuggestions = true;
       syntaxHighlighting = {
-	enable = true;
-};
+        enable = true;
+      };
       history = {
         expireDuplicatesFirst = true;
         ignoreSpace = true;
@@ -98,35 +94,35 @@ in {
         fi
         # End Nix
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-        '';
+      '';
     };
     starship = {
       enable = true;
       settings = {
         format = builtins.concatStringsSep "" [
-        "$directory"
-        "$git_branch"
-        "$character"
+          "$directory"
+          "$git_branch"
+          "$character"
         ];
         git_branch = {
           style = "bold yellow";
         };
-        };
+      };
     };
     alacritty = {
       enable = true;
-      settings = {  
+      settings = {
         window = {
           padding = {
-          x = 10;
-          y = 10;
-        };
+            x = 10;
+            y = 10;
+          };
           decorations = "none";
         };
         font = {
           normal = {
             family = "FiraCode Nerd Font";
-            };
+          };
           size = 16;
         };
         colors = {
@@ -135,25 +131,25 @@ in {
             foreground = "#839496";
           };
           normal = {
-            black   = "#073642";
-            red     = "#dc322f";
-            green   = "#859900";
-            yellow  = "#b58900";
-            blue    = "#268bd2";
+            black = "#073642";
+            red = "#dc322f";
+            green = "#859900";
+            yellow = "#b58900";
+            blue = "#268bd2";
             magenta = "#d33682";
-            cyan    = "#2aa198";
-            white   = "#eee8d5";
+            cyan = "#2aa198";
+            white = "#eee8d5";
           };
           bright = {
-            black   = "#4c4c4c";
-            red     = "#cb4b16";
-            green   = "#586e75";
-            yellow  = "#657b83";
-            blue    = "#839496";
+            black = "#4c4c4c";
+            red = "#cb4b16";
+            green = "#586e75";
+            yellow = "#657b83";
+            blue = "#839496";
             magenta = "#6c71c4";
-            cyan    = "#93a1a1";
-            white   = "#fdf6e3";
-        };
+            cyan = "#93a1a1";
+            white = "#fdf6e3";
+          };
         };
       };
     };
@@ -162,6 +158,6 @@ in {
       options = {
         font = "FiraCode Nerd Font 16";
       };
-      };
+    };
   };
 }

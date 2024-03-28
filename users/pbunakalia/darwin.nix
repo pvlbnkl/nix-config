@@ -1,16 +1,18 @@
-{ inputs, pkgs, ... }:
 {
-
-users.users.pbunakalia = {
+  inputs,
+  pkgs,
+  ...
+}: {
+  users.users.pbunakalia = {
     home = "/Users/pbunakalia";
     shell = pkgs.zsh;
   };
-homebrew = {
+  homebrew = {
     enable = true;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    taps = [ "koekeishiya/formulae" ];
-    masApps = { };
+    taps = ["koekeishiya/formulae"];
+    masApps = {};
     casks = [
       "amethyst"
       "battery"
