@@ -1,5 +1,5 @@
 {
-  description = "flake";
+  description = "pvl flake";
 
   inputs = {
 
@@ -16,17 +16,16 @@
     };
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, darwin, ... }: {
-    darwinConfigurations.darwin = darwin.lib.darwinSystem {
-    system = "aarch64-darwin";
-    modules = [
-          ./darwin.nix
-          home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.pbunakalia = import ./home-manager.nix;
-          }
-          ];
+  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs: let 
+
+    mkSystem = import ./lib/mksystem.nix {
+      inherit nixpkgs inputs;
+      };
+  in {
+    darwinConfigurations.darwin = mkSystem "darwin" {
+        system = "aarch64-darwin";
+        user   = "pbunakalia";
+        darwin = true;
     };
   };
 }

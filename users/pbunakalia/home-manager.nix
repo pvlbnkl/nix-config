@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ inputs, ... }:
+{ pkgs, ... }:
 
-{
+let 
+  isDarwin = pkgs.stdenv.isDarwin;
+
+in {
   imports = (import ./config);
   manual.manpages.enable = false;
   home = {
