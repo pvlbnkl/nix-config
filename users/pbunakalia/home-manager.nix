@@ -12,10 +12,7 @@ in {
     packages = with pkgs; [
 # osx specific
       colima
-      karabiner-elements
-      skhd
-      yabai
-      sketchybar
+      utm
 # general
       awscli2
       alacritty
@@ -23,6 +20,7 @@ in {
       cargo
       eza
       fastfetch
+      gimp
       gnupg
       go
       hugo
@@ -33,32 +31,25 @@ in {
       kubectl
       lf
       lua
-      marksman
-      mpc-cli
-      mpd
       mpv-unwrapped
-      ncmpcpp
       nmap
       nodejs_20
       ollama
       packer
+      pre-commit
       qbittorrent
       ripgrep
       rustc
-      starship
       stylua
       syncthing
       terraform
       teleport
       tflint
-      tree-sitter
-      wireguard-go
-      wireguard-tools
-      utm
-      yabai
       yarn
       yt-dlp
-      zathura
+      wireguard-go
+    # learning new stuff
+      elixir
     ];
   };
 
