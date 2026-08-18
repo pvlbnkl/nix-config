@@ -87,6 +87,8 @@ in
     security.pam.services.greetd.enableGnomeKeyring = true;
     programs.seahorse.enable = true;
 
+    programs.ssh.enableAskPassword = true;
+
     services.udisks2.enable = true;
     services.gvfs.enable = true;
 
