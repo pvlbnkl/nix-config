@@ -47,7 +47,7 @@
   boot.kernelParams = [ "zswap.max_pool_percent=40" ];
 
   boot.kernel.sysctl = {
-    "vm.swappiness" = 100;
+    "vm.swappiness" = 10;
   };
 
   systemd.oomd = {
