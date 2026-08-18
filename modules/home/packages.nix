@@ -18,7 +18,7 @@
     gnupg
     mkpasswd
     nmap
-#    normcap
+    normcap
     ripgrep
     tree
     usbeehive
