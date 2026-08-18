@@ -15,12 +15,20 @@ in
 
     services.hardware.bolt.enable = true;
 
-    programs.gamemode.enable = true;
-    programs.gamemode.settings.cpu.pin_cores = "yes";
+    programs.gamemode = {
+      enable = true;
+        enableRenice = true;
+      settings = {
+        cpu = {
+          park_cores = "no";
+          pin_cores = "4-11";
+        };
+      };
+    };
     programs.steam = {
       enable = true;
       package = pkgs.steam.override {
-        extraPkgs = pkgs: with pkgs; [ gamemode ];
+        extraPkgs = pkgs: with pkgs; [ gamemode gamemode.lib ];
       };
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
