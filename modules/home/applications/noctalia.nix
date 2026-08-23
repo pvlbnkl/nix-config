@@ -116,6 +116,24 @@
         custom_palette = "Monochrome";
       };
 
+      lockscreen = {
+        enabled = true;
+        lock_before_suspend = true;
+      };
+
+      idle.behavior = {
+        lock = {
+          enabled = true;
+          timeout = 300;
+          action = "lock";
+        };
+        "lock-and-suspend" = {
+          enabled = true;
+          timeout = 600;
+          action = "lock_and_suspend";
+        };
+      };
+
       wallpaper = {
         enabled = false;
       };
@@ -166,27 +184,37 @@
           actions = [
             {
               action = "lock";
-              enabled = false;
-            }
-            {
-              action = "suspend";
-              enabled = false;
-            }
-            {
-              action = "hibernate";
-              enabled = false;
-            }
-            {
-              action = "reboot";
               enabled = true;
+              shortcut = "1";
+            }
+            {
+              action = "lock_and_suspend";
+              enabled = true;
+              shortcut = "2";
+            }
+            {
+              action = "command";
+              command = "systemctl hibernate";
+              label = "Hibernate";
+              glyph = "hibernate";
+              enabled = true;
+              shortcut = "3";
             }
             {
               action = "logout";
               enabled = true;
+              shortcut = "4";
+            }
+            {
+              action = "reboot";
+              enabled = true;
+              shortcut = "5";
             }
             {
               action = "shutdown";
+              variant = "destructive";
               enabled = true;
+              shortcut = "6";
             }
           ];
         };

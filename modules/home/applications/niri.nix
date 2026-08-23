@@ -165,20 +165,22 @@ in
       "Super+WheelScrollLeft".action."focus-column-left" = [ ];
       "Super+WheelScrollRight".action."focus-column-right" = [ ];
 
-      "Super+X".action.spawn = [
-        "${pkgs.swaylock}/bin/swaylock"
-        "-f"
-        "-c"
-        "000000"
-      ];
-      "Super+Shift+X".action.spawn = [
-        "systemctl"
-        "suspend"
-      ];
-      "Super+Ctrl+X".action.spawn = [
-        "systemctl"
-        "hibernate"
-      ];
+      "Super+X" = mkSpawnBind "noctalia msg session lock";
+
+      #      "Super+X".action.spawn = [
+      #        "${pkgs.swaylock}/bin/swaylock"
+      #        "-f"
+      #        "-c"
+      #        "000000"
+      #      ];
+      #      "Super+Shift+X".action.spawn = [
+      #        "systemctl"
+      #        "suspend"
+      #      ];
+      #      "Super+Ctrl+X".action.spawn = [
+      #        "systemctl"
+      #        "hibernate"
+      #      ];
 
       "Super+S" = mkActionBind "screenshot";
       "Super+Shift+S" = mkActionBind "screenshot-screen";
@@ -349,7 +351,7 @@ in
   };
 
   services.swayidle = {
-    enable = true;
+    enable = false;
     timeouts = [
       {
         timeout = 300;
