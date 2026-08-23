@@ -17,7 +17,7 @@ in
 
     programs.gamemode = {
       enable = true;
-        enableRenice = true;
+      enableRenice = true;
       settings = {
         cpu = {
           park_cores = "no";
@@ -28,7 +28,11 @@ in
     programs.steam = {
       enable = true;
       package = pkgs.steam.override {
-        extraPkgs = pkgs: with pkgs; [ gamemode gamemode.lib ];
+        extraPkgs =
+          pkgs: with pkgs; [
+            gamemode
+            gamemode.lib
+          ];
       };
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
