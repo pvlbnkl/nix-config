@@ -58,7 +58,7 @@ in
         stable.ssm-session-manager-plugin
 
         # AI
-        gemini-cli
+        antigravity-cli
         codex
         ollama
         context7-mcp
