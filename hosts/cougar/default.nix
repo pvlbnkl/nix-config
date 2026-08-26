@@ -22,6 +22,7 @@
     gaming.enable = true;
     obs.enable = true;
     k3s.enable = true;
+    vial.enable = true;
   };
 
   boot.loader.systemd-boot.enable = false;

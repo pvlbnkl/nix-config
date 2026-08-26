@@ -11,5 +11,6 @@
     ./openclaw.nix
     ./radicale.nix
     ./syncthing.nix
+    ./vial.nix
   ];
 }
