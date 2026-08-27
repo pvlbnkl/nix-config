@@ -45,7 +45,7 @@ in
       keyboard = {
         xkb = {
           layout = "us,ca,ru,ua";
-          options = "grp:win_space_toggle";
+          options = "grp:ctrl_space_toggle";
         };
         repeat-delay = 250;
         repeat-rate = 25;
