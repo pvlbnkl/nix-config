@@ -16,6 +16,7 @@ in
       overrideDevices = false;
       overrideFolders = false;
       settings.folders.brain.path = "/var/lib/syncthing/brain";
+      settings.gui.useTLS = false;
     };
 
     systemd.services.syncthing.serviceConfig.UMask = "0007";

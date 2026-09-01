@@ -212,7 +212,7 @@
             }
             {
               action = "shutdown";
-              variant = "destructive";
+#              variant = "destructive";
               enabled = true;
               shortcut = "6";
             }
