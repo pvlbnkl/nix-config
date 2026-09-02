@@ -61,11 +61,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-openclaw = {
-      url = "github:openclaw/nix-openclaw";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -102,6 +97,5 @@
         formatting = treefmtEval.${system}.config.build.check self;
       });
       nixosConfigurations.cougar = mkSystem "cougar" { };
-      nixosConfigurations.openclaw = mkSystem "openclaw" { headless = true; };
     };
 }

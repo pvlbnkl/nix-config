@@ -8,8 +8,6 @@
     ./k3s.nix
     ./niri.nix
     ./obs.nix
-    ./openclaw.nix
-    ./radicale.nix
     ./syncthing.nix
     ./vial.nix
   ];
