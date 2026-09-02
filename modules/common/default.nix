@@ -5,6 +5,5 @@
     ./locale.nix
     ./nix-settings.nix
     ./networking.nix
-    ./sops.nix
   ];
 }

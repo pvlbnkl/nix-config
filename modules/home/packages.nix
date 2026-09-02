@@ -35,9 +35,5 @@
     nix-du
     nix-top
     nix-tree
-
-    # Secrets management
-    sops
-    ssh-to-age
   ];
 }
