@@ -101,7 +101,6 @@
       checks = forAllSystems (system: {
         formatting = treefmtEval.${system}.config.build.check self;
       });
-      nixosConfigurations.phoenix = mkSystem "phoenix" { };
       nixosConfigurations.cougar = mkSystem "cougar" { };
       nixosConfigurations.openclaw = mkSystem "openclaw" { headless = true; };
     };
