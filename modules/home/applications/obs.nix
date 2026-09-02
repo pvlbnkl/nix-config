@@ -10,8 +10,6 @@
         obs-vaapi
         wlrobs
         droidcam-obs
-        obs-shaderfilter
-        obs-move-transition
       ];
     })
   ];
