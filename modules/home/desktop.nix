@@ -29,7 +29,6 @@ in
       tor-browser
       vesktop
       wowup-cf
-      zoom-us
     ];
   };
 }
